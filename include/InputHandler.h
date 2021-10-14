@@ -1,5 +1,4 @@
 #pragma once
-#include <SDL.h>
 #include <iostream>
 #include <stdio.h>
 #include <string>
@@ -11,26 +10,26 @@ class InputHandler{
     void handleInput(SDL_Event t_events);
 
     private:
-    Command* m_buttonX;
-    Command* m_buttonY;
-    Command* m_buttonA;
-    Command* m_buttonB;
+    Command* m_buttonX = new CreateBrickCommand();
+    Command* m_buttonY = new CreateStoneCommand();
+    Command* m_buttonA = new CreateConcreteCommand();
+    Command* m_buttonB = new CreateWoodCommand();
 };
 
 
 void InputHandler::handleInput(SDL_Event t_events){
     //Add the executes here. 
-
-    if(t_events.type == SDL_KEYDOWN && t_events.key.keysym.sym == SDLK_1)
+    printf("BABAJAGEAR");
+    if(t_events.type == SDL_KEYDOWN && t_events.key.keysym.sym == SDLK_LEFT)
     {
         m_buttonX->execute();
-    }else if(t_events.type == SDL_KEYDOWN && t_events.key.keysym.sym == SDLK_2)
+    }else if(t_events.type == SDL_KEYDOWN && t_events.key.keysym.sym == SDLK_UP)
     {
         m_buttonY->execute();
-    }else if(t_events.type == SDL_KEYDOWN && t_events.key.keysym.sym == SDLK_3)
+    }else if(t_events.type == SDL_KEYDOWN && t_events.key.keysym.sym == SDLK_DOWN)
     {
         m_buttonA->execute();
-    }else if(t_events.type == SDL_KEYDOWN && t_events.key.keysym.sym == SDLK_4)
+    }else if(t_events.type == SDL_KEYDOWN && t_events.key.keysym.sym == SDLK_RIGHT)
     {
         m_buttonB->execute();
     }

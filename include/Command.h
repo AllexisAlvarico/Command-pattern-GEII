@@ -8,13 +8,11 @@ class Command
 private:
 
 public:
-    virtual ~Command();
     virtual void execute() = 0;
     virtual void undo() = 0;
 
 protected:
-    Command(){};    
-};
+}; 
 
 class CreateBrickCommand : public Command
 {
