@@ -9,8 +9,6 @@ class Factory
 {
     public:
     virtual CreateObject *CreateBuild() = 0;
-    private:
-
 };
 
 class BrickFactory : public Factory{

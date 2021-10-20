@@ -48,8 +48,6 @@ void Game::processEvents(SDL_Event e)
         if(e.type == SDL_QUIT){ //if the user press the X button
             m_gameIsRunning = false;
         }
-
-        m_handler.handleInput(e);
     }
 
 

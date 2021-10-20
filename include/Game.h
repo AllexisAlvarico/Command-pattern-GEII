@@ -4,7 +4,6 @@
 #include <string>
 #include "Factory.h"
 #include <vector>
-#include "InputHandler.h"
 
 class Game
 {
@@ -26,6 +25,5 @@ private:
     const int SCREEN_HEIGHT = 480;
     SDL_Window* m_window;
     SDL_Renderer* m_renderer;
-    InputHandler m_handler;
 
 };
